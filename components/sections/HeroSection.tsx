@@ -29,10 +29,9 @@ export function HeroSection() {
       </motion.div>
 
       {/* 2. LAYER TEKS BELAKANG (z-10) - Menampilkan role & "HIZKIA" */}
-      {/* md:-translate-y-[10vh] menaikkan seluruh blok teks di layar desktop */}
       <motion.div 
         style={{ y: yText }}
-        className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center mt-10 md:mt-0 md:-translate-y-[10vh] pointer-events-none"
+        className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center mt-10 pointer-events-none"
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -44,34 +43,34 @@ export function HeroSection() {
           </p>
         </motion.div>
         
-        {/* Teks "HIZKIA" - Diperbesar (25vw) untuk mobile, Diperkecil (9.5rem) untuk desktop */}
+        {/* Teks "HIZKIA" muncul nyata - Diperbesar untuk mobile (25vw) */}
         <motion.h1 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="text-[25vw] md:text-[11vw] lg:text-[9.5rem] font-display font-bold uppercase tracking-tighter text-foreground drop-shadow-lg leading-none whitespace-nowrap"
+          className="text-[25vw] md:text-[15vw] lg:text-[13rem] font-display font-bold uppercase tracking-tighter text-foreground drop-shadow-lg leading-none whitespace-nowrap"
         >
           HIZKIA
         </motion.h1>
 
-        {/* Teks "DIAZ" (invisible) - Menjaga struktur spasi */}
+        {/* Teks "DIAZ" disembunyikan (invisible) HANYA untuk menjaga struktur spasi/jarak tetap presisi */}
         <motion.h1 
-          className="text-[25vw] md:text-[11vw] lg:text-[9.5rem] font-display font-bold uppercase tracking-tighter text-foreground drop-shadow-lg leading-none whitespace-nowrap -mt-6 md:-mt-8 opacity-0 invisible"
+          className="text-[25vw] md:text-[15vw] lg:text-[13rem] font-display font-bold uppercase tracking-tighter text-foreground drop-shadow-lg leading-none whitespace-nowrap -mt-6 md:-mt-10 opacity-0 invisible"
         >
           DIAZ
         </motion.h1>
       </motion.div>
 
       {/* 3. LAYER FOTO MC (z-20) - Terjepit di antara HIZKIA dan DIAZ */}
-      {/* md:-translate-y-[10vh] menaikkan wadah foto di desktop agar sejajar dengan teks */}
       <motion.div 
         style={{ y: yImage, opacity: opacityImage }}
-        className="absolute inset-0 z-20 w-full h-full pointer-events-none flex justify-center items-center -mt-16 md:mt-0 md:-translate-y-[10vh]"
+        className="absolute inset-0 z-20 w-full h-full pointer-events-none flex justify-center items-center -mt-16 md:-mt-24"
       >
-        {/* WRAPPER RESPONSIF: 
-            Mobile: h-[95vh], geser kiri 20%, turunkan, perbesar 1.4x 
-            Desktop: h-[80vh] (lebih pendek), reset geser & scale */}
-        <div className="w-full max-w-[1600px] h-[95vh] md:h-[80vh] transform translate-y-32 -translate-x-[20%] scale-[1.4] md:translate-y-0 md:translate-x-0 md:scale-100 transition-transform duration-500">
+        {/* WRAPPER KHUSUS MOBILE: 
+            -translate-x-[20%] (geser kiri 20%) 
+            translate-y-32 (turunkan lebih jauh) 
+            scale-[1.4] (perbesar) */}
+        <div className="w-full max-w-[1600px] h-[95vh] md:h-[110vh] transform translate-y-32 -translate-x-[20%] scale-[1.4] md:translate-y-0 md:translate-x-0 md:scale-100 transition-transform duration-500">
           <motion.img 
             initial={{ opacity: 0, filter: "blur(10px)", y: 20 }}
             animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
@@ -86,7 +85,7 @@ export function HeroSection() {
       {/* 4. LAYER TEKS DEPAN (z-30) - Menampilkan "DIAZ" di depan foto */}
       <motion.div 
         style={{ y: yText }}
-        className="absolute inset-0 z-30 flex flex-col justify-center items-center text-center mt-10 md:mt-0 md:-translate-y-[10vh] pointer-events-none"
+        className="absolute inset-0 z-30 flex flex-col justify-center items-center text-center mt-10 pointer-events-none"
       >
         {/* Spacer tersembunyi menggantikan Role */}
         <div className="mb-6 opacity-0 invisible">
@@ -95,7 +94,7 @@ export function HeroSection() {
         
         {/* Spacer tersembunyi menggantikan HIZKIA */}
         <motion.h1 
-          className="text-[25vw] md:text-[11vw] lg:text-[9.5rem] font-display font-bold uppercase tracking-tighter text-foreground drop-shadow-lg leading-none whitespace-nowrap opacity-0 invisible"
+          className="text-[25vw] md:text-[15vw] lg:text-[13rem] font-display font-bold uppercase tracking-tighter text-foreground drop-shadow-lg leading-none whitespace-nowrap opacity-0 invisible"
         >
           HIZKIA
         </motion.h1>
@@ -105,7 +104,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="text-[25vw] md:text-[11vw] lg:text-[9.5rem] font-display font-bold uppercase tracking-tighter text-foreground drop-shadow-lg leading-none whitespace-nowrap -mt-6 md:-mt-8"
+          className="text-[25vw] md:text-[15vw] lg:text-[13rem] font-display font-bold uppercase tracking-tighter text-foreground drop-shadow-lg leading-none whitespace-nowrap -mt-6 md:-mt-10"
         >
           DIAZ
         </motion.h1>
@@ -114,7 +113,7 @@ export function HeroSection() {
       {/* 5. BUTTONS & UI LAYER (z-40) - Diperkecil & Diturunkan posisinya */}
       <motion.div 
         style={{ y: yText }}
-        className="absolute z-40 bottom-[5%] md:bottom-[12%] flex flex-col justify-center items-center w-full"
+        className="absolute z-40 bottom-[5%] md:bottom-[8%] flex flex-col justify-center items-center w-full"
       >
         <motion.div
           initial={{ opacity: 0 }}
