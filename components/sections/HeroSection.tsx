@@ -64,10 +64,11 @@ export function HeroSection() {
       {/* 3. LAYER FOTO MC (z-20) - Terjepit di antara HIZKIA dan DIAZ */}
       <motion.div 
         style={{ y: yImage, opacity: opacityImage }}
-        className="absolute inset-0 z-20 w-full h-full pointer-events-none flex justify-center items-center -mt-10 md:mt-0 md:-translate-y-[5vh]"
+        /* Margin negative dihapus agar kontrol posisi sepenuhnya dikendalikan oleh transform di bawah */
+        className="absolute inset-0 z-20 w-full h-full pointer-events-none flex justify-center items-center md:-translate-y-[5vh]"
       >
-        {/* PERBAIKAN MOBILE: h-[85vh], translate-y-0 (tidak lagi diturunkan berlebihan), geser kiri 15%, scale 1.2 */}
-        <div className="w-full max-w-[1600px] h-[85vh] md:h-[65vh] transform translate-y-0 -translate-x-[15%] scale-[1.2] md:translate-y-0 md:translate-x-0 md:scale-100 transition-transform duration-500">
+        {/* PERBAIKAN MOBILE: Ditarik naik jauh (-translate-y-[15vh]), geser kiri 15%, scale 1.2 */}
+        <div className="w-full max-w-[1600px] h-[85vh] md:h-[65vh] transform -translate-y-[15vh] -translate-x-[15%] scale-[1.2] md:translate-y-0 md:translate-x-0 md:scale-100 transition-transform duration-500">
           <motion.img 
             initial={{ opacity: 0, filter: "blur(10px)", y: 20 }}
             animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
@@ -110,7 +111,6 @@ export function HeroSection() {
       {/* 5. BUTTONS & UI LAYER (z-40) */}
       <motion.div 
         style={{ y: yText }}
-        /* PERBAIKAN JARAK MOBILE: Posisi bottom dinaikkan ke 18% untuk jarak ekstra dari scroll */
         className="absolute z-40 bottom-[18%] md:bottom-[12%] flex flex-col justify-center items-center w-full"
       >
         <motion.div
@@ -147,7 +147,6 @@ export function HeroSection() {
 
       {/* Scroll Indicator */}
       <motion.div 
-        /* PERBAIKAN SCROLL MOBILE: Posisi sedikit diturunkan ke bottom-4 jika diperlukan */
         className="absolute bottom-4 md:bottom-10 z-40 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50"
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
