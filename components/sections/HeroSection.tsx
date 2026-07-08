@@ -65,10 +65,10 @@ export function HeroSection() {
       <motion.div 
         style={{ y: yImage, opacity: opacityImage }}
         /* Margin negative dihapus agar kontrol posisi sepenuhnya dikendalikan oleh transform di bawah */
-        className="absolute inset-0 z-20 w-full h-full pointer-events-none flex justify-center items-center md:-translate-y-[5vh] -translate-x-[20%] scale-[1.2]" 
+        className="absolute inset-0 z-20 w-full h-full pointer-events-none flex justify-center items-center md:-translate-y-[5vh] -translate-x-[30%]" 
       >
         {/* PERBAIKAN MOBILE: Ditarik naik jauh (-translate-y-[15vh]), geser kiri 15%, scale 1.2 */}
-        <div className="w-full max-w-[1600px] h-[85vh] md:h-[65vh] transform -translate-y-[40vh] -translate-x-[15%] scale-[1.2] md:translate-y-0 md:translate-x-0 md:scale-100 transition-transform duration-500">
+        <div className="w-full max-w-[1600px] h-[85vh] md:h-[65vh] transform -translate-y-[30vh] -translate-x-[15%] scale-[1.2] md:translate-y-0 md:translate-x-0 md:scale-100 transition-transform duration-500">
           <motion.img 
             initial={{ opacity: 0, filter: "blur(10px)", y: 20 }}
             animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
